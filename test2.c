@@ -2,11 +2,22 @@
 
 int main(void){
 	
-	int num1 = 00;				// int형 변수를 선언하고 10 저장 
-	int *numPtr = &num1;		// 포인터 변수 선언하고 num1의 주소를 저장 
+	// A, B, AND, OR, XOR, NOT 
+	int A=0;
+	int B=0;
+	int i=0;
 	
-	printf("%p\n", numPtr);		// 포인터 변수 numPtr의 값 출력  
-	printf("%p\n", &num1);		// 변수 num1의 메모리 주소 출력 
+	printf("A\tB\tAND\tOR\tXOR\tNOT\n");
+	
+	for(i=0; i<4; i++){
+		printf("%2d\t%2d\t%2d\t%2d\t%2d\t%2d\n", A, B, A&&B, A||B, A^B, !A);	
+		if(i==0 || i==2) {
+			B++;
+		} else if(i==1) {
+			A=B;
+			B=0;
+		} 
+	}
 	
 	return 0;
 }
